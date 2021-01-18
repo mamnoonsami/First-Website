@@ -1,0 +1,4 @@
+<big> for making a speciifc word or line bigger
+<small> for making smaller
+<sub> for writing H20 (water) with correct format like the 2 in the bottom
+<sup> is for writing math terms like 10^2 , writing the 2 in top of 10

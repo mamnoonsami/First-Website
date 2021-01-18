@@ -1,0 +1,164 @@
+* {
+	padding: 0;
+	margin: 0;
+	//background: rgb(20,20,20);
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	/*background : url("../images/b4.jpg");*/
+	/*font-family: "Cormorant Garamond",sans-serif;*/
+	background-size: cover;
+}
+body{
+	background: rgb(28,208,28);
+	font-family: "Poppins",sans-serif;;
+}
+nav{
+	border:1px solid red;
+	background-color: black;
+	width: 100%;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav ul{
+	float: right;
+	margin-right: 20px;
+}
+.logo img{
+	height: 50px;
+	cursor: pointer;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 20px;
+}
+nav ul li a{
+	color: white;
+	font-size: 100%;
+	text-transform: uppercase;
+	padding:7px 9px;
+	border-radius: 7px;
+
+}
+nav ul li a:hover{
+	background-color: orange;
+	transition: .3s;
+}
+
+.checkButton{
+	font-size: 25px;
+	color: white;
+	line-height: 80px;
+	margin-right: 30px;
+	cursor: pointer;
+	display: none;
+
+}
+
+#check{
+	display: none;	
+}
+
+/*.name_description {
+	color: white;
+	text-align: center;
+
+}
+
+#name{
+	font-size: 1.25em;
+}
+
+#description{
+	font-size: 1em;
+	font-weight:;
+}
+
+.container{
+	background-color: steelblue;
+	margin: 10px;
+	height: 2000px;
+	border: 2px solid red;
+
+
+	display: grid;
+
+	grid-template-rows: auto auto;
+	grid-template-columns: auto;
+	
+}
+.container-item{
+	width: 100%;
+	height: 100%;
+	margin: 10px;
+	line-height: 10px; /*define the gap between two photos
+	object-fit: cover;
+}
+*/
+
+@media (max-width: 627px){
+	.checkButton{
+		display: block;
+	}
+
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: orange;
+		text-align: center;
+		top: 50px;
+		left: -100%;
+		transition: all 0.5s;
+	}
+	nav ul li{
+		display: block;
+		margin:50px 0;
+		line-height: 30px;
+	}
+	nav ul li a{
+		font-size: 95%; 
+	}
+	nav ul li a:hover{
+		background: none;
+		color: orange;
+	}
+	#check:checked ~ ul{
+		left: 0%;
+	}
+
+
+}
+
+@media (max-width: 700px){
+	nav ul li {
+		font-size: 80%;
+	}
+	nav{
+		height: 50px;
+	}
+	.logo img{
+		height: 40px;
+	}
+	
+
+}
+
+/*#b1{
+	height: 400px;
+	width: 855px;
+}
+#flipflop{
+	width: 285px;
+}
+#coneyIsland{
+	width: 285px;
+
+}
+
+#fire{
+	width: 285px;
+}*/

@@ -1,0 +1,315 @@
+* {
+	padding: 0;
+	margin: 0;
+	/*background: rgb(20,20,20);*/
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	/*background : url("../images/b4.jpg");*/
+	/*font-family: "Cormorant Garamond",sans-serif;*/
+	background-size: cover;
+}
+body{
+	background: rgb(255, 255, 255);
+	font-family: "Poppins",sans-serif;
+}
+nav{
+	/*z-index: 2;*/
+	/*position: fixed;
+	top: 0px;*/
+	background-color: rgb(43, 43, 43);
+	width: 100%;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav ul{
+	float: right;
+	margin-right: 20px;
+}
+.logo img{
+	filter: brightness(1.5);
+	height: 50px;
+	cursor: pointer;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 20px;
+}
+nav ul li a{
+	color: white;
+	font-size: 100%;
+	text-transform: uppercase;
+	padding:7px 9px;
+	border-radius: 7px;
+	border: 1px solid steelblue;
+
+}
+nav ul li a:hover{
+	background-color: orange;
+	transition: .3s;
+}
+
+.checkButton{
+	font-size: 25px;
+	color: white;
+	line-height: 80px;
+	margin-right: 30px;
+	cursor: pointer;
+	display: none;
+	transition: all 0.5s;
+
+}
+.checkButton:hover{
+	transform: rotate(180deg);
+	opacity: 0.5;
+}
+
+#check{
+	display: none;	
+}
+
+
+
+@media (max-width: 627px){
+	.checkButton{
+		display: block;
+	}
+
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: white;
+		text-align: center;
+		top: 50px;
+		left: -100%;
+		transition: all 0.5s;
+		z-index: 2;
+	}
+	nav ul li{
+		display: block;
+		margin:50px 0;
+		line-height: 30px;
+	}
+	nav ul li a{
+		color: black;
+		border:none;
+		font-size: 95%; 
+	}
+	nav ul li a:hover{
+		background: none;
+		color: orange;
+	}
+	#check:checked ~ ul{
+		z-index: 2;
+		left: 0%;
+	}
+}
+
+@media (max-width: 700px){
+	nav ul li {
+		font-size: 80%;
+	}
+	nav{
+		height: 50px;
+	}
+	.logo img{
+		height: 40px;
+	}
+	
+
+}
+
+.container{
+	z-index: -1;
+	background-color: white;
+	width: 80%;
+	margin: 2rem auto;
+	/*text-align: center;*/ /*to bring the text of images in center of image*/
+
+}
+.gallery{
+	position: relative; /*to add the animation later*/
+	display: grid;
+	grid-template-columns: repeat(10,1fr);
+	grid-template-rows: repeat(10,5vw);
+	grid-gap: 0.8rem;
+}
+.galleryItem{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;/*to bring the text of images in center of image*/
+	-webkit-box-shadow: -1px 0px 6px 0px rgba(0,0,0,0.75); 
+	box-shadow: -1px 0px 6px 0px rgba(0,0,0,0.75);
+}
+.images{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	object-fit: cover;
+	display: block;
+}
+
+.galleryImage{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	object-fit: cover;
+	object-position: 50% 50%; /*shows the center of photo even after resizing*/
+	display: block;
+	cursor: pointer;
+	transition: 0.4s ease-in-out;
+	
+}
+.galleryImage:hover{ /*zoom the picture 1.5X and make blurry when cursor is on the picture*/
+	webkit-filter:blur(1px); /*for non supported  browsers*/
+	filter: blur(1px);
+	transform: scale(1.5);
+}
+
+ .imageText{
+	 /*background-color: rgb(125, 122, 100);*/
+	font-family: "Cormorant Garamond",sans-serif;
+ 	color: white;
+ 	text-transform: uppercase;
+ 	font-size: 1.5vw;
+ 	font-weight: bold;
+ 	opacity: 0; /*opacity is 0 to make the text invisible initially, we will do code to make text visible once the cursor is on the photo*/
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%,-50%); /*two  line above this line including this line to put the text in the middle of  image*/
+ 	pointer-events: none; /* now if cursor is even on top of text it will still show the 1.5X zoom effect of every image*/
+ 	transform: .4s ease-in-out;
+
+ }
+
+ .galleryItem:hover .imageText{
+ 	opacity: 1;
+ 	animation: move-right .3s linear;
+ 	padding: 1em;
+ 	width: 100%;
+ }
+
+@keyframes move-right{ /*function for moving the text on photo from left to right*/ 
+	0%{
+		left: 10%;
+	}
+	50%{
+		left: 35%;
+	}
+	100%{
+		left: 50%;
+	}
+}
+
+.item1{ /* Cavendish with my picture*/
+	grid-column: 1 / span 4; /*start at column 1 and take total 4 columns*/
+	grid-row: 1 / span 2; /* start at row 1 and take total 2 rows*/
+}
+
+.item2{/* Adidas flipflop*/
+	grid-column: 5 / span 2;
+	grid-row: 1 / span 5;
+}
+.item3{/* Coney Island with my picture*/
+	grid-column: 1 / span 2;
+	grid-row: 3 / span 5;
+}
+.item4{/*Victoria Park Charalottetown*/
+	grid-column: 3 / span 2;
+	grid-row: 3 / span 3;
+}
+.item5{/*Montreal */
+	grid-column: 7 / span 4;
+	grid-row: 1 / span 2;
+}
+.item6{/*Newyork Time Square*/
+	grid-column: 3 / span 4;
+	grid-row: 6 / span 2;
+}
+.item9{/*Mooney's Pond*/
+	grid-column: 7 / span 4;
+	grid-row: 3 / span 3;
+}
+.item8{/*Downtown */
+	grid-column: 7 / span 4;
+	grid-row: 6 / span 3;
+}
+.item7{/*Bonfire*/
+	grid-column: 1 / span 4;
+	grid-row: 8 / span 3;
+}
+.item10{/*Fire */
+	grid-column: 5 / span 2;
+	grid-row: 8 / span 3;
+}
+.item11{/*Brackley Beach */
+	grid-column: 7 / span 4;
+	grid-row: 9 / span 2;
+}
+
+@media screen and (max-width: 600px)
+{
+	.gallery{
+		grid-template-columns: repeat(2,1fr);
+		grid-template-rows: repeat(65,5vw);
+
+	}
+	.imageText{
+		font-size: 3.5vw;
+	}
+	.container{
+		width: 60%;
+	}
+
+	.item1{
+		grid-column: 1 / span 2;
+		grid-row: 1 / span 5;
+		
+	}
+	.item2{ 
+		grid-column: 1 / span 2;
+		grid-row: 6 / span 9;
+	}
+	.item3{ 
+		grid-column: 1 / span 2;
+		grid-row: 15 / span 10;
+	}
+	.item4{ 
+		grid-column: 1 / span 2;
+		grid-row: 25 / span 8;
+	}
+	.item5{ 
+		grid-column: 1 / span 2;
+		grid-row: 33 / span 5;
+	}
+	.item6{ 
+		grid-column: 1 / span 2;
+		grid-row: 38 / span 5;
+	}
+	.item7{ 
+		grid-column: 1 / span 2;
+		grid-row: 43 / span 5;
+	}
+	.item8{ 
+		grid-column: 1 / span 2;
+		grid-row: 48 / span 5;
+	}
+	.item9{
+		grid-column: 1 / span 2;
+		grid-row: 53 / span 6;
+	}
+	.item10{
+		grid-column: 1 / span 2;
+		grid-row: 59 / span 6;
+	}
+	.item11{ 
+		grid-column: 1 / span 2;
+		grid-row: 65 / span 5;
+	} 
+}

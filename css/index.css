@@ -10,8 +10,8 @@
 	background-size: cover;
 }
 body{
-	background: white;
-	font-family: "Poppins",sans-serif;;
+	background:linear-gradient(rgb(224, 224, 224),rgb(224, 224, 224));
+	font-family: "Poppins",sans-serif;
 }
 nav{
 	/*z-index: 10000;*/
